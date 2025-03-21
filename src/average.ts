@@ -6,3 +6,4 @@ export function mean(numbers: number[]): number {
   const mean: number = sum / numbers.length;
   return mean;
 }
+  
