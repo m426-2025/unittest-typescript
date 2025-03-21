@@ -2,9 +2,9 @@ import { add, subtract } from "./calculator";
 
 test("add three to two is five", () => {
   // Arrange
-  const a: number = 2;
+  const a: number = 3;
   const b: number = 3;
-  const expected: number = 5;
+  const expected: number = 6;
 
   // Act
   const actual = add(a, b);
