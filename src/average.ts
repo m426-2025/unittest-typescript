@@ -10,7 +10,18 @@ export function mean(numbers: number[]): number {
   return mean;
 }
 
-export function median(numbers: number[]): number {
+export function median(values: number[]): number {
 
-  return 0.0;
+  if (values.length === 0) {
+    throw new Error('Cannot calculate median of zero numbers');
+  }
+  values = [...values].sort((a, b) => a - b);
+
+  const half = Math.floor(values.length / 2);
+
+  return (values.length % 2
+    ? values[half]
+    : (values[half - 1] + values[half]) / 2
+  );
+
 }
