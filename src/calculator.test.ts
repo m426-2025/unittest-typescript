@@ -1,10 +1,10 @@
 import { add, subtract } from "./calculator";
 
-test("add three to two is five", () => {
+test("add three to six is nine", () => {
   // Arrange
-  const a: number = 2;
+  const a: number = 6;
   const b: number = 3;
-  const expected: number = 5;
+  const expected: number = 9;
 
   // Act
   const actual = add(a, b);
