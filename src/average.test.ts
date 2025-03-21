@@ -23,3 +23,15 @@ test("test mean of five numbers", () => {
   // Assert
   expect(actual).toBe(expected);
 });
+
+test("test mean of no numbers", () => {
+  // Arrange
+  const numbers: number[] = [];
+  const expected: Error = Error("No numbers in the array");
+
+  // Act
+  const actual = () => mean(numbers);
+
+  // Assert
+  expect(actual).toThrow(expected);
+});
