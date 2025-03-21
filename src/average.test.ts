@@ -22,15 +22,10 @@ test("test mean of five numbers", () => {
   // Assert
   expect(actual).toBe(expected);
 });
-
 test("test mean of no number", () => {
   // Arrange
   const numbers: number[] = [];
-  const expected: number = NaN;
 
-  // Act
-  const actual: number = mean(numbers);
-
-  // Assert
-  expect(actual).toBe(expected);
+  // Act & Assert
+  expect(() => mean(numbers)).toThrow("Cannot calculate mean of zero numbers");
 });
