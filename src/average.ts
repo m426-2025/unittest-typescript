@@ -9,3 +9,8 @@ export function mean(numbers: number[]): number {
   const mean: number = sum / numbers.length;
   return mean;
 }
+
+export function median(numbers: number[]): number {
+
+  return 0.0;
+}
