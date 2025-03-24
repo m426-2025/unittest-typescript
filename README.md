@@ -287,5 +287,3 @@ Schreiben Sie zunächst einige Testfälle:
 5. Die Standardabweichung der Zahlenreihe `[1, 2, 3, 4, 5]` beträgt ca. `1.414` (`1.41 < sd < 1.42`)
 
 Implementieren Sie anschliessend die Funktion `standardDeviation`, welche die Standardabweichung korrekt berechnen sollte.
-#   u n i t t e s t - t y p e s c r i p t  
- 
