@@ -10,3 +10,6 @@ export function multiply(first: number, second: number): number {
   return first * second;
 }
 
+export function division(zähler: number, nenner: number): number {
+  return zähler / nenner;
+}
