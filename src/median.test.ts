@@ -21,3 +21,11 @@ test("median for no elements", () => {
     const numbers: number[] = [];
     expect(() => median(numbers)).toThrowError("Liste darf nicht leer sein!");
 });
+
+test("median for shuffled odd list", () => {
+    const numbers = [9, 6, 1, 10, 2, 7, 8];
+    const expected = 7;
+    const actual = median(numbers);
+    expect(actual).toBe(expected);
+  });
+  
