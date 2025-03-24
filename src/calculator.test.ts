@@ -52,14 +52,11 @@ test("division four by two is two", () => {
   expect(actual).toBe(expected);
 });
 
-test("division by zero returns Infinity", () => {
+test("division by zero throws an error", () => {
   // Arrange
   const a: number = 10;
   const b: number = 0;
 
-  // Act
-  const actual: number = division(a, b);
-
-  // Assert
-  expect(actual).toBe(Infinity);
+  // Assert & Act
+  expect(() => division(a, b)).toThrowError("Division durch 0 ist nicht erlaubt!");
 });
