@@ -12,7 +12,7 @@ export function multiply(factorA: number, factorB: number): number {
 
 export function divide(dividend: number, divisor: number): number {
   if (divisor === 0) {
-    throw "Division by 0 is not possible";
+    throw Error("Division by 0 is not possible");
   }
   return dividend / divisor;
 }

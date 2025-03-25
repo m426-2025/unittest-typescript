@@ -56,11 +56,11 @@ test("division by zero is not possible", () => {
   //Arrange
   const a: number = 15;
   const b: number = 0;
-  const expected = Infinity;
+  const expected: Error = Error("Division by 0 is not possible");
 
   //Act
   const actual = () => divide(a, b);
 
   //Assert
-  expect(actual).toThrow("Division by 0 is not possible");
+  expect(actual).toThrow(expected);
 });
