@@ -5,3 +5,6 @@ export function add(summandA: number, summandB: number): number {
 export function subtract(minuend: number, subtrahend: number): number {
   return minuend - subtrahend;
 }
+export function multiply(factorA: number, factorB: number): number {
+  return factorA * factorB;
+}
