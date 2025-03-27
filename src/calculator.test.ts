@@ -25,10 +25,15 @@ test("subtract four from six is two", () => {
   // Assert
   expect(actual).toBe(expected);
 });
+
 test('multiply two and three is six', () => {
   expect(multiply(2, 3)).toBe(6);
 });
+
 test('divide six by two is three', () => {
   expect(divide(6, 2)).toBe(3);
 });
 
+test('division by zero should throw an error', () => {
+  expect(() => divide(5, 0)).toThrow('Division by zero is not allowed');
+});
