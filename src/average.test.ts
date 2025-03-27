@@ -19,3 +19,15 @@ test("mean of [2, 4] is 3", () => {
 test("mean of empty list throws", () => {
   expect(() => mean([])).toThrow("Cannot calculate mean of empty array");
 });
+
+test("median of [1,2,6,7,8] is 6", () => {
+  expect(median([1,2,6,7,8])).toBe(6);
+});
+
+test("median of [1,2,5,6,7,8] is 5.5", () => {
+  expect(median([1,2,5,6,7,8])).toBe(5.5);
+});
+
+test("median of empty throws", () => {
+  expect(() => median([])).toThrow("Cannot calculate median of empty array");
+});
