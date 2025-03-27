@@ -31,3 +31,7 @@ test("median of [1,2,5,6,7,8] is 5.5", () => {
 test("median of empty throws", () => {
   expect(() => median([])).toThrow("Cannot calculate median of empty array");
 });
+
+test("mode of [1,1,2,2,3] is [1,2]", () => {
+  expect(mode([1,1,2,2,3])).toEqual([1,2]);
+});
