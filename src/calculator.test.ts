@@ -1,4 +1,4 @@
-import { add, subtract } from "./calculator";
+import { add, subtract, multiply, divide } from "./calculator";
 
 test("add three to two is five", () => {
   // Arrange
@@ -24,4 +24,16 @@ test("subtract four from six is two", () => {
 
   // Assert
   expect(actual).toBe(expected);
+});
+
+test("multiply 3 and 4 is 12", () => {
+  expect(multiply(3, 4)).toBe(12);
+});
+
+test("divide 8 by 4 is 2", () => {
+  expect(divide(8, 4)).toBe(2);
+});
+
+test("divide by 0 throws error", () => {
+  expect(() => divide(1, 0)).toThrow("Division by zero is not allowed");
 });
