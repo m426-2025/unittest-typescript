@@ -1,4 +1,4 @@
-import { mean } from "./average";
+import { mean, median, mode, standardDeviation } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
