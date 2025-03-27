@@ -25,3 +25,7 @@ test("subtract four from six is two", () => {
   // Assert
   expect(actual).toBe(expected);
 });
+
+test("multiply 3 and 4 is 12", () => {
+  expect(multiply(3, 4)).toBe(12);
+});
