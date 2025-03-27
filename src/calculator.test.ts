@@ -1,4 +1,4 @@
-import { add, subtract, multiply } from "./calculator";
+import { add, subtract, multiply, divide } from "./calculator";
 
 test("add three to two is five", () => {
   // Arrange
@@ -27,5 +27,8 @@ test("subtract four from six is two", () => {
 });
 test('multiply two and three is six', () => {
   expect(multiply(2, 3)).toBe(6);
+});
+test('divide six by two is three', () => {
+  expect(divide(6, 2)).toBe(3);
 });
 
