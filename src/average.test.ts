@@ -1,4 +1,4 @@
-import { mean } from "./average";
+import { mean, median } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -38,11 +38,11 @@ test("test mean of no numbers", () => {
 
 test("test median for odd number of elements", () => {
   // Arrange
-  const numbers: number[] = [3, 8, 10];
-  const expected: number = 6.5;
+  const numbers: number[] = [8, 3, 10];
+  const expected: number = 8;
 
   // Act
-  const actual: number = mean(numbers);
+  const actual: number = median(numbers);
 
   // Assert
   expect(actual).toBe(expected);
@@ -50,11 +50,11 @@ test("test median for odd number of elements", () => {
 
 test("test median for even number of elements", () => {
   // Arrange
-  const numbers: number[] = [5, 8, 3, 15];
+  const numbers: number[] = [3, 5, 8, 15];
   const expected: number = 6.5;
 
   // Act
-  const actual: number = mean(numbers);
+  const actual: number = median(numbers);
 
   // Assert
   expect(actual).toBe(expected);
@@ -65,7 +65,7 @@ test("test median for no elements", () => {
   const numbers: number[] = [];
 
   // Act
-  const actual: number = mean(numbers);
+  const actual: number = median(numbers);
 
   // Assert
   expect(actual).toThrow(Error);
