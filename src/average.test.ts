@@ -1,4 +1,4 @@
-import {mean, median, mode} from "./average";
+import {mean, median, mode, standardDeviation} from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -158,4 +158,48 @@ test("test mode for 1", () => {
 
   // Assert
   expect(actual).toEqual(expected);
+});
+
+test("test standard deviation for empty array", () => {
+  // Arrange
+  const numbers: number[] = [];
+
+  // Act / Assert
+  expect(() => standardDeviation(numbers)).toThrow();
+});
+
+test("test standard deviation for 1 and 3", () => {
+  // Arrange
+  const numbers: number[] = [1, 3];
+  const expected: number = 1;
+
+  // Act
+  const actual: number = standardDeviation(numbers);
+
+  // Assert
+  expect(actual).toBe(expected);
+});
+
+test("test standard deviation for 1 and 5", () => {
+  // Arrange
+  const numbers: number[] = [1, 5];
+  const expected: number = 2;
+
+  // Act
+  const actual: number = standardDeviation(numbers);
+
+  // Assert
+  expect(actual).toBe(expected);
+});
+
+test("test standard deviation for 1, 2, 3, 4 and 5", () => {
+  // Arrange
+  const numbers: number[] = [1, 2, 3, 4, 5];
+  const expected: number = 1.414;
+
+  // Act
+  const actual: number = standardDeviation(numbers);
+
+  // Assert
+  expect(String(actual).startsWith(String(expected))).toBe(true);
 });

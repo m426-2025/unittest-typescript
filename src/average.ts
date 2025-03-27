@@ -35,3 +35,16 @@ export function mode(numbers: number[]): number[] {
       .sort((a, b) => counts[b] - counts[a])
       .filter((x, _i, arr) => counts[x] >= counts[arr[0]]);
 }
+
+export function standardDeviation(numbers: number[]): number {
+  const avg = mean(numbers);
+  const n = numbers.length;
+
+  let result = 0;
+
+  for (const x of numbers) {
+    result += (x - avg) ** 2;
+  }
+
+  return Math.sqrt(result / n);
+}
