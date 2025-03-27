@@ -29,3 +29,10 @@ export function mode(numbers: number[]): number[] {
     .filter(([, count]) => count === maxFreq)
     .map(([num]) => Number(num));
 }
+
+export function standardDeviation(numbers: number[]): number {
+  if (numbers.length === 0) throw new Error("Cannot calculate standard deviation of empty array");
+  const m = mean(numbers);
+  const variance = numbers.reduce((sum, x) => sum + (x - m) ** 2, 0) / numbers.length;
+  return Math.sqrt(variance);
+}

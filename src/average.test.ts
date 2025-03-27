@@ -35,3 +35,17 @@ test("median of empty throws", () => {
 test("mode of [1,1,2,2,3] is [1,2]", () => {
   expect(mode([1,1,2,2,3])).toEqual([1,2]);
 });
+
+test("standard deviation of [1,3] is 1", () => {
+  expect(standardDeviation([1,3])).toBeCloseTo(1);
+});
+
+test("standard deviation of [1,5] is 2", () => {
+  expect(standardDeviation([1,5])).toBeCloseTo(2);
+});
+
+test("standard deviation of [1,2,3,4,5] is ~1.414", () => {
+  const result = standardDeviation([1,2,3,4,5]);
+  expect(result).toBeGreaterThan(1.41);
+  expect(result).toBeLessThan(1.42);
+});
