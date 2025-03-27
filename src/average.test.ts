@@ -18,7 +18,7 @@ test("test mean of five numbers", () => {
   const expected: number = 3;
 
   // Act
-  const actual: number = mean(numbers);
+  const actual: number = mean1(numbers);
 
   // Assert
   expect(actual).toBe(expected);
@@ -29,7 +29,7 @@ test("test mean of no numbers", () => {
   const numbers: number[] = [];
 
   // Act & Assert
-  expect(() => mean(numbers)).toThrowError("empty list");
+  expect(() => mean2(numbers)).toThrowError("empty list");
 });
 
 
