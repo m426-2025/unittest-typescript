@@ -22,3 +22,16 @@ export function median(numbers: number[]): number {
     return (numbers[mid - 1] + numbers[mid]) / 2;
   }
 }
+
+export function mode(numbers: number[]): number[] {
+  const counts = {};
+
+  for (const num of numbers) {
+    counts[num] = counts[num] ? counts[num] + 1 : 1;
+  }
+
+  return Object.keys(counts)
+      .map(Number)
+      .sort((a, b) => counts[b] - counts[a])
+      .filter((x, _i, arr) => counts[x] >= counts[arr[0]]);
+}

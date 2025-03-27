@@ -1,4 +1,4 @@
-import {mean, median} from "./average";
+import {mean, median, mode} from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -64,3 +64,98 @@ test("test median for no elements", () => {
   expect(() => median(numbers)).toThrow();
 });
 
+test("test mode for 1", () => {
+  // Arrange
+  const numbers: number[] = [1];
+  const expected: number[] = [1];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1", () => {
+  // Arrange
+  const numbers: number[] = [1, 1];
+  const expected: number[] = [1];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1, 2", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2];
+  const expected: number[] = [1];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1, 2, 2", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2, 2];
+  const expected: number[] = [1, 2];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1, 2, 2, 3", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2, 2, 3];
+  const expected: number[] = [1, 2];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1, 2, 2, 3, 3", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2, 2, 3, 3];
+  const expected: number[] = [1, 2, 3];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1, 1, 2, 2, 3, 3, 3", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2, 2, 3, 3, 3];
+  const expected: number[] = [3];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
+
+test("test mode for 1", () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 2, 2, 3, 3, 3, 3];
+  const expected: number[] = [3];
+
+  // Act
+  const actual: number[] = mode(numbers);
+
+  // Assert
+  expect(actual).toEqual(expected);
+});
