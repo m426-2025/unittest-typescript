@@ -13,7 +13,7 @@ export function mean(numbers: number[]): number {
 
 export function median(numbers: number[]): number {
   if (numbers.length === 0) {
-    throw new Error("Leere Liste – Median nicht definiert");
+    throw new Error("Leere Liste - Median nicht definiert");
   }
 
   const sorted = [...numbers].sort((a, b) => a - b);
@@ -41,4 +41,15 @@ export function mode(numbers: number[]): number[] {
     .map(Number)
     .filter(num => freqMap[num] === maxFreq)
     .sort((a, b) => a - b);
+}
+
+export function standardDeviation(numbers: number[]): number {
+  if (numbers.length === 0) {
+    throw new Error("Leere Liste - Standardabweichung nicht definiert");
+  }
+
+  const meanValue = mean(numbers);
+  const squaredDiffs = numbers.map(n => (n - meanValue) ** 2);
+  const variance = squaredDiffs.reduce((sum, val) => sum + val, 0) / numbers.length;
+  return Math.sqrt(variance);
 }

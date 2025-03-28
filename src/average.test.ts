@@ -1,4 +1,4 @@
-import { mean, median, mode } from "./average";
+import { mean, median, mode, standardDeviation } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -47,7 +47,7 @@ test("median for even number of elements", () => {
 });
 
 test("median for no elements", () => {
-  expect(() => median([])).toThrow("Leere Liste – Median nicht definiert");
+  expect(() => median([])).toThrow("Leere Liste - Median nicht definiert");
 });
 
 test("mode of [1]", () => {
@@ -76,4 +76,26 @@ test("mode of [1, 1, 2, 2, 3, 3]", () => {
 
 test("mode of [1, 1, 2, 2, 3, 3, 3]", () => {
   expect(mode([1, 1, 2, 2, 3, 3, 3])).toEqual([3]);
+});
+
+test("standard deviation of empty array throws error", () => {
+  expect(() => standardDeviation([])).toThrow("Leere Liste - Standardabweichung nicht definiert");
+});
+
+test("standard deviation of single value [5] is 0", () => {
+  expect(standardDeviation([5])).toBe(0);
+});
+
+test("standard deviation of [1, 3] is 1", () => {
+  expect(standardDeviation([1, 3])).toBe(1);
+});
+
+test("standard deviation of [1, 5] is 2", () => {
+  expect(standardDeviation([1, 5])).toBe(2);
+});
+
+test("standard deviation of [1, 2, 3, 4, 5] is approx. 1.41", () => {
+  const result = standardDeviation([1, 2, 3, 4, 5]);
+  expect(result).toBeGreaterThan(1.41);
+  expect(result).toBeLessThan(1.42);
 });
