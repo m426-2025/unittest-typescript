@@ -39,15 +39,11 @@ test("mutliply 2 times 3 is six", () => {
   expect(actual).toBe(expected);
 });
 
-test("divide 10 by 0 returns Infinity", () => {
+test("divide by zero throws an error", () => {
   // Arrange
   const dividend = 10;
   const divisor = 0;
-  const expected = Infinity;
 
-  // Act
-  const actual = divide(dividend, divisor);
-
-  // Assert
-  expect(actual).toBe(expected);
+  // Assert & Act
+  expect(() => divide(dividend, divisor)).toThrow("Division durch 0 ist nicht erlaubt");
 });
