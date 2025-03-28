@@ -33,14 +33,14 @@ test("test mean of no numbers", () => {
 });
 
 test("median for odd number of elements", () => {
-  const numbers = [1, 2, 6, 7, 8];
+  const numbers = [1, 2, 6, 7, 8, 9, 10];
   const expected = 6;
   const actual = median(numbers);
   expect(actual).toBe(expected);
 });
 
 test("median for even number of elements", () => {
-  const numbers = [1, 2, 5, 6, 7, 8];
+  const numbers = [1, 2, 5, 6, 7, 8, 9, 10];
   const expected = 5.5;
   const actual = median(numbers);
   expect(actual).toBe(expected);
