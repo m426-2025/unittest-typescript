@@ -1,5 +1,4 @@
-import { mean } from "./average";
-import { median } from "./average";
+import { mean, median, mode } from "./average";
 
 test("mean of two numbers", () => {
   // Arrange
@@ -63,4 +62,53 @@ test("median for no elements throws error", () => {
 
   // Act & Assert
   expect(() => median(numbers)).toThrow("Cannot calculate median of an empty list.");
+});
+
+test("mode of [1] is 1", () => {
+  const numbers = [1];
+  const expected = [1];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1] is 1", () => {
+  const numbers = [1, 1];
+  const expected = [1];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1, 2] is 1", () => {
+  const numbers = [1, 1, 2];
+  const expected = [1];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1, 2, 2] is [1, 2]", () => {
+  const numbers = [1, 1, 2, 2];
+  const expected = [1, 2];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1, 2, 2, 3] is [1, 2]", () => {
+  const numbers = [1, 1, 2, 2, 3];
+  const expected = [1, 2];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1, 2, 2, 3, 3, 3] is [3]", () => {
+  const numbers = [1, 1, 2, 2, 3, 3, 3];
+  const expected = [3];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
+});
+
+test("mode of [1, 1, 2, 2, 3, 3, 3, 3] is [3]", () => {
+  const numbers = [1, 1, 2, 2, 3, 3, 3, 3];
+  const expected = [3];
+  const actual = mode(numbers);
+  expect(actual).toEqual(expected);
 });

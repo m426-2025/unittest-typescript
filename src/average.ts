@@ -20,3 +20,22 @@ export function median(numbers: number[]): number {
       return (sorted[mid - 1] + sorted[mid]) / 2; // Gerade Anzahl -> Durchschnitt der zwei Mittleren
   }
 }
+
+export function mode(numbers: number[]): number[] {
+  const frequency: { [key: number]: number } = {};
+  
+  // Zähle die Häufigkeit jedes Elements
+  for (let num of numbers) {
+    frequency[num] = (frequency[num] || 0) + 1;
+  }
+
+  // Bestimme die höchste Häufigkeit
+  const maxFrequency = Math.max(...Object.values(frequency));
+
+  // Finde alle Zahlen mit der höchsten Häufigkeit
+  const modes = Object.keys(frequency)
+    .filter(key => frequency[parseInt(key)] === maxFrequency)
+    .map(key => parseInt(key));
+
+  return modes;
+}
