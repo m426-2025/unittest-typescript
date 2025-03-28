@@ -1,4 +1,4 @@
-import { mean } from "./average";
+import { mean, median } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -30,4 +30,22 @@ test("test mean of no numbers", () => {
 
   // Assert & Act
   expect(() => mean(numbers)).toThrow("Liste darf nicht leer sein");
+});
+
+test("median for odd number of elements", () => {
+  const numbers = [1, 2, 6, 7, 8];
+  const expected = 6;
+  const actual = median(numbers);
+  expect(actual).toBe(expected);
+});
+
+test("median for even number of elements", () => {
+  const numbers = [1, 2, 5, 6, 7, 8];
+  const expected = 5.5;
+  const actual = median(numbers);
+  expect(actual).toBe(expected);
+});
+
+test("median for no elements", () => {
+  expect(() => median([])).toThrow("Leere Liste – Median nicht definiert");
 });
