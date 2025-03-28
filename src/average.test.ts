@@ -1,4 +1,4 @@
-import { mean, median, mode } from "./average";
+import { mean, median, mode, standardDeviation } from "./average";
 
 test("mean of two numbers", () => {
   // Arrange
@@ -111,4 +111,37 @@ test("mode of [1, 1, 2, 2, 3, 3, 3, 3] is [3]", () => {
   const expected = [3];
   const actual = mode(numbers);
   expect(actual).toEqual(expected);
+});
+
+test("standard deviation of empty list throws error", () => {
+  const numbers: number[] = [];
+  expect(() => standardDeviation(numbers)).toThrow("Cannot calculate standard deviation of an empty list.");
+});
+
+test("standard deviation of one value is 0", () => {
+  const numbers = [5];
+  const expected = 0;
+  const actual = standardDeviation(numbers);
+  expect(actual).toBeCloseTo(expected, 5);
+});
+
+test("standard deviation of [1, 3] is 1", () => {
+  const numbers = [1, 3];
+  const expected = 1;
+  const actual = standardDeviation(numbers);
+  expect(actual).toBeCloseTo(expected, 5);
+});
+
+test("standard deviation of [1, 5] is 2", () => {
+  const numbers = [1, 5];
+  const expected = 2;
+  const actual = standardDeviation(numbers);
+  expect(actual).toBeCloseTo(expected, 5);
+});
+
+test("standard deviation of [1, 2, 3, 4, 5] is approximately 1.414", () => {
+  const numbers = [1, 2, 3, 4, 5];
+  const expected = Math.sqrt((Math.pow(1 - 3, 2) + Math.pow(2 - 3, 2) + Math.pow(3 - 3, 2) + Math.pow(4 - 3, 2) + Math.pow(5 - 3, 2)) / 5);
+  const actual = standardDeviation(numbers);
+  expect(actual).toBeCloseTo(expected, 3);
 });

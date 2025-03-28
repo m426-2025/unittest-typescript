@@ -39,3 +39,16 @@ export function mode(numbers: number[]): number[] {
 
   return modes;
 }
+
+export function standardDeviation(numbers: number[]): number {
+  if (numbers.length === 0) {
+    throw new Error("Cannot calculate standard deviation of an empty list.");
+  }
+
+  const meanValue = mean(numbers);  // Verwendet die bereits bestehende mean-Funktion
+
+  const squaredDifferences = numbers.map(num => Math.pow(num - meanValue, 2));
+  const averageSquaredDifference = squaredDifferences.reduce((acc, val) => acc + val, 0) / numbers.length;
+
+  return Math.sqrt(averageSquaredDifference);
+}
