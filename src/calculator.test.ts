@@ -52,7 +52,7 @@ test("divide fifty-six by seven is eight", () => {
   expect(actual).toBe(expected);
 })
 
-test("divide fifty-six by zero is eight", () => {
+test("divide fifty-six by zero is infinity", () => {
   // Arrange
   const a: number = 56;
   const b: number = 0;
@@ -64,3 +64,7 @@ test("divide fifty-six by zero is eight", () => {
   // Assert
   expect(actual).toBe(expected);
 })
+
+test('divide by zero throws error', () => {
+  expect(() => division(10, 0)).toThrow('Division by zero is not allowed');
+});
