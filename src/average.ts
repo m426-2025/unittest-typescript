@@ -25,3 +25,20 @@ export function median(numbers: number[]): number {
     return (sorted[mid - 1] + sorted[mid]) / 2;
   }
 }
+
+export function mode(numbers: number[]): number[] {
+  const freqMap: Record<number, number> = {};
+  let maxFreq = 0;
+
+  for (const num of numbers) {
+    freqMap[num] = (freqMap[num] || 0) + 1;
+    if (freqMap[num] > maxFreq) {
+      maxFreq = freqMap[num];
+    }
+  }
+
+  return Object.keys(freqMap)
+    .map(Number)
+    .filter(num => freqMap[num] === maxFreq)
+    .sort((a, b) => a - b);
+}

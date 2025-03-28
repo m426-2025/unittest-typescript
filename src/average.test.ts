@@ -1,4 +1,4 @@
-import { mean, median } from "./average";
+import { mean, median, mode } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -48,4 +48,32 @@ test("median for even number of elements", () => {
 
 test("median for no elements", () => {
   expect(() => median([])).toThrow("Leere Liste – Median nicht definiert");
+});
+
+test("mode of [1]", () => {
+  expect(mode([1])).toEqual([1]);
+});
+
+test("mode of [1, 1]", () => {
+  expect(mode([1, 1])).toEqual([1]);
+});
+
+test("mode of [1, 1, 2]", () => {
+  expect(mode([1, 1, 2])).toEqual([1]);
+});
+
+test("mode of [1, 1, 2, 2]", () => {
+  expect(mode([1, 1, 2, 2])).toEqual([1, 2]);
+});
+
+test("mode of [1, 1, 2, 2, 3]", () => {
+  expect(mode([1, 1, 2, 2, 3])).toEqual([1, 2]);
+});
+
+test("mode of [1, 1, 2, 2, 3, 3]", () => {
+  expect(mode([1, 1, 2, 2, 3, 3])).toEqual([1, 2, 3]);
+});
+
+test("mode of [1, 1, 2, 2, 3, 3, 3]", () => {
+  expect(mode([1, 1, 2, 2, 3, 3, 3])).toEqual([3]);
 });
