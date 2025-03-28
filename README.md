@@ -76,7 +76,7 @@ Studio Code aus.
 Passen Sie nun eine der beiden Funktionen `add` oder `subtract` an, sodass diese
 zwar noch kompiliert werden können, jedoch ein falsches Ergebnis zurückliefern.
 Führen Sie die Tests erneut aus. Sehen Sie den Unterschied zu vorher?
-
+Ein Test failed.
 Machen Sie Ihre Änderung anschliessen wieder rückgängig, sodass alle Tests
 wieder fehlerfrei durchlaufen.
 
@@ -84,7 +84,7 @@ wieder fehlerfrei durchlaufen.
 
 Ändern Sie nun in einem der beiden Testfälle die Werte der Variablen `a` oder
 `b`. Was denken Sie, was passieren wird?
-
+Der Test wird failen 
 Führen Sie anschliessend die Tests aus und überprüfen Sie Ihre Vermutung!
 
 Passen Sie nun den Wert der Variablen `expected` entsprechend an, sodass alle
@@ -122,7 +122,7 @@ Machen Sie das gleiche für die Division wie zuvor für die Multiplikation. Lass
 Sie die Tests zwischen den einzelnen Arbeitsschritten jeweils durchlaufen.
 
 Welchen Datentyp sollte der Rückgabewert sinnvollerweise haben?
-
+double
 ### Aufgabe 4.2: Sonderfall (Division durch 0)
 
 Im Gegensatz zur Addition, Subtraktion und Multiplikation gibt es bei der
