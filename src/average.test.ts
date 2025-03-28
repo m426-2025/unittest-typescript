@@ -1,4 +1,4 @@
-import { mean } from "./average";
+import { mean, median } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -23,4 +23,18 @@ test('mean of five numbers', () => {
 
 test('mean of no numbers throws error', () => {
   expect(() => mean([])).toThrow('Cannot calculate mean of empty list');
+});
+
+test('median for odd number of elements', () => {
+  const numbers = [1, 2, 6, 7, 8];
+  expect(median(numbers)).toBe(6);
+});
+
+test('median for even number of elements', () => {
+  const numbers = [1, 2, 5, 6, 7, 8];
+  expect(median(numbers)).toBe(5.5);
+});
+
+test('median for no elements throws error', () => {
+  expect(() => median([])).toThrow('Cannot calculate median of empty list');
 });
