@@ -23,3 +23,21 @@ export function median(numbers: number[]): number {
     return (sorted[mid - 1] + sorted[mid]) / 2;
   }
 }
+
+export function mode(numbers: number[]): number[] {
+  const freqMap: Record<number, number> = {};
+  numbers.forEach(n => freqMap[n] = (freqMap[n] || 0) + 1);
+  const maxFreq = Math.max(...Object.values(freqMap));
+  return Object.keys(freqMap)
+    .filter(k => freqMap[+k] === maxFreq)
+    .map(Number);
+}
+
+export function standardDeviation(numbers: number[]): number {
+  if (numbers.length === 0) {
+    throw new Error('Cannot calculate standard deviation of empty list');
+  }
+  const avg = mean(numbers);
+  const variance = numbers.reduce((sum, x) => sum + Math.pow(x - avg, 2), 0) / numbers.length;
+  return Math.sqrt(variance);
+}

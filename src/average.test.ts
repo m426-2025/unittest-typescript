@@ -1,4 +1,4 @@
-import { mean, median } from "./average";
+import { mean, median, mode, standardDeviation } from "./average";
 
 test("test mean of two numbers", () => {
   // Arrange
@@ -37,4 +37,13 @@ test('median for even number of elements', () => {
 
 test('median for no elements throws error', () => {
   expect(() => median([])).toThrow('Cannot calculate median of empty list');
+});
+
+test('mode returns most frequent number(s)', () => {
+  expect(mode([1, 1, 2, 2, 3])).toEqual([1, 2]);
+});
+
+
+test('standard deviation of [1,3] is 1', () => {
+  expect(standardDeviation([1, 3])).toBeCloseTo(1);
 });
