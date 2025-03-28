@@ -3,7 +3,7 @@ export function add(summandA: number, summandB: number): number {
 }
 
 export function subtract(minuend: number, subtrahend: number): number {
-  return minuend - subtrahend;
+  return minuend - minuend;
 }
 
 export function multiply(faktorA: number, faktorB: number): number{
